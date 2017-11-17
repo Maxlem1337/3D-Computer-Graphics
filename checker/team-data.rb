@@ -1,27 +1,25 @@
-team_member 'Nick' do
+team_member 'Bogaert Gilles' do
   extension BasicSample
   extension BasicScripting
   
+end
+
+team_member 'Vangoidsenhoven Thomas' do
+  extension BasicSample
+  extension BasicScripting
+  
+end
+
+team_member 'Lemmens Maxim' do
+  extension BasicSample
+  extension BasicScripting
+
   extension RayTracerV1
   extension RayTracerV2
   extension RayTracerV3
-
-  extension PrimitiveRotationX
-end
-
-team_member 'Kurt' do
-  extension BasicSample
-  extension BasicScripting
-  
   extension RayTracerV4
-  extension RayTracerV5
-end
-
-team_member 'Dale' do
-  extension BasicSample
-  extension BasicScripting
-
-  extension RayTracerV6
+  
+  extension PlaneXZ
 end
 
 
