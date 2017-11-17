@@ -19,6 +19,8 @@ team_member 'Lemmens Maxim' do
   extension RayTracerV3
   extension RayTracerV4
   
+  extension MaterialVerticalLines
+  
   extension PlaneXZ
 end
 
