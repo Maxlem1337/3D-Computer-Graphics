@@ -1,0 +1,57 @@
+// This function is called for multiple values of "now"
+def scene_at(now)
+{
+  var camera = Cameras.perspective( [ "eye": pos(0,0,5),
+                                      "look_at": pos(0,0,0)])
+
+var floor_material = Materials.uniform( [ "ambient": Colors.white() * 0.1,
+                                            "diffuse": Colors.white() * 0.8,
+                                            "reflectivity": 0.5 ] )
+
+  // Create material                  
+  var sphere_material = Materials.uniform( [ "ambient": Colors.blue() * 0.1,
+                                             "diffuse": Colors.blue() * 0.8,
+                                             "specular": Colors.white() * 0.8,
+                                             "specular_exponent": 10,
+                                             "transparency": 0.7,
+                                             "refractive_index": 2.5 ] )
+                                             
+
+  var back_wall_material = Materials.uniform( [ "ambient": Colors.green() * 0.1,
+                                                "diffuse": Colors.green() * 0.8 ] )
+
+  var ceiling_material = floor_material
+
+  var primitives = []
+  primitives.push_back( translate(vec(0,-2,0), decorate(floor_material, xz_plane())) )
+  primitives.push_back( translate(vec(0,2,0), decorate(ceiling_material, xz_plane())) )
+  primitives.push_back( translate(vec(0,0,-2), decorate(back_wall_material, xy_plane())) )
+
+
+	var p = Animations.animate(-2,1,seconds(1))
+	
+
+  //primitives.push_back(decorate(sphere_material, sphere() ))
+    primitives.push_back(decorate(sphere_material, translate(vec(-1,0,p[now]), sphere())   ))
+
+
+
+
+
+
+  var lights = [ Lights.omnidirectional( pos(0,1.9,0), Colors.white() ) ]
+
+  create_scene(camera, union(primitives), lights)
+}
+
+var renderer = Renderers.standard( [ "width": 500,
+                                     "height": 500,
+                                     "sampler": Samplers.single(),
+                                     "ray_tracer": Raytracers.v3() ] )
+
+pipeline( scene_animation(scene_at, seconds(1)),
+          [ Pipeline.animation(30),
+            Pipeline.renderer(renderer),
+            Pipeline.wif(),
+            Pipeline.base64(),
+            Pipeline.stdout() ] )
