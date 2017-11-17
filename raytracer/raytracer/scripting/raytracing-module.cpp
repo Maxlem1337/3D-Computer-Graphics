@@ -15,6 +15,11 @@ namespace
     struct RaytracerLibrary
     {
         RayTracer v0() const { return raytracer::raytracers::v0(); }
+		RayTracer v1() const { return raytracer::raytracers::v1(); }
+		RayTracer v2() const { return raytracer::raytracers::v2(); }
+		RayTracer v3() const { return raytracer::raytracers::v3(); }
+		RayTracer v4() const { return raytracer::raytracers::v4(); }
+
 
         RayTracer v(int version) const
         {
@@ -55,6 +60,10 @@ ModulePtr raytracer::scripting::_private_::create_raytracing_module()
     // Expose each member of the library
 #   define BIND(NAME)   module->add(fun(&RaytracerLibrary::NAME), #NAME)
     BIND(v0);
+	BIND(v1);
+	BIND(v2);
+	BIND(v3);
+	BIND(v4);
     BIND(v);
 #   undef BIND
 
