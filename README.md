@@ -49,7 +49,7 @@
   - BasicSample
   - BasicScripting
   - RayTracerV1
-  - PlaneXZ
+  - PlaneXZ (+ PlaneYZ?)
   - /
 - 4x Difficulty 2.
   - RayTracerV2
@@ -57,7 +57,7 @@
   - RayTracerV4
   - MaterialVerticalLines
 - 3x Difficulty 3.
-  - /
+  - RayTracerV5
   - / 
   - /
 - 2x Difficulty 4.
