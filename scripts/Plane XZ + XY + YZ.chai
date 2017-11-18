@@ -18,18 +18,7 @@ def scene_at(now)
                                                  "diffuse": Colors.green() * 0.8 ] )
                                                  
 	var ceiling_material = floor_material
-	
-	var sphere_material = Materials.uniform( [ "ambient": Colors.blue() * 0.1,
-                                             "diffuse": Colors.blue() * 0.8,
-                                             "specular": Colors.white() * 0.8,
-                                             "specular_exponent": 10,
-                                             "transparency": 0.7,
-                                             "refractive_index": 2.5 ] )
                                              
-
-
-
-	
 
 	var primitives = []
 	primitives.push_back( translate(vec(0,-2,0), decorate(floor_material, xz_plane())) )
@@ -37,13 +26,6 @@ def scene_at(now)
 	primitives.push_back( translate(vec(-2,0,0), decorate(left_wall_material, yz_plane())) )
     primitives.push_back( translate(vec(2,0,0), decorate(right_wall_material, yz_plane())) )
 	primitives.push_back( translate(vec(0,0,-2), decorate(back_wall_material, xy_plane())) )
-
-
-	var p = Animations.animate(-2,1,seconds(1))
-	
-
-	//primitives.push_back(decorate(sphere_material, sphere() ))
-    primitives.push_back(decorate(sphere_material, translate(vec(0,0,p[now]), sphere())   ))
 
 	var lights = [ Lights.omnidirectional( pos(0,1.9,0), Colors.white() ) ]
 
@@ -53,7 +35,7 @@ def scene_at(now)
 var renderer = Renderers.standard( [ "width": 500,
                                      "height": 500,
                                      "sampler": Samplers.single(),
-                                     "ray_tracer": Raytracers.v3() ] )
+                                     "ray_tracer": Raytracers.v2() ] )
 
 pipeline( scene_animation(scene_at, seconds(1)),
           [ Pipeline.animation(30),

@@ -18,10 +18,12 @@ team_member 'Lemmens Maxim' do
   extension RayTracerV2
   extension RayTracerV3
   extension RayTracerV4
+  extension RayTracerV5
   
   extension MaterialVerticalLines
   
   extension PlaneXZ
+  extension PlaneYZ
 end
 
 
