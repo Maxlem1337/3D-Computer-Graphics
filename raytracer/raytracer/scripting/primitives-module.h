@@ -12,6 +12,7 @@ namespace raytracer
         namespace _private_
         {
             chaiscript::ModulePtr create_primitives_module();
+			//chaiscript::ModulePtr create_mesh_module();
         }
     }
 }
