@@ -368,6 +368,7 @@
     <ClCompile Include="math\plane.cpp" />
     <ClCompile Include="math\quantize.cpp" />
     <ClCompile Include="math\transformation-matrices.cpp" />
+    <ClCompile Include="mesh\mesh-reader.cpp" />
     <ClCompile Include="performance\performance.cpp" />
     <ClCompile Include="pipeline\animation-processor.cpp" />
     <ClCompile Include="pipeline\base64-processor.cpp" />
@@ -375,6 +376,9 @@
     <ClCompile Include="pipeline\text-writer-consumer.cpp" />
     <ClCompile Include="pipeline\wif-consumer.cpp" />
     <ClCompile Include="pipeline\wif-processor.cpp" />
+    <ClCompile Include="primitives\bounding-box-primitive.cpp" />
+    <ClCompile Include="primitives\disk-primitive.cpp" />
+    <ClCompile Include="primitives\mesh-primitive.cpp" />
     <ClCompile Include="primitives\primitive.cpp" />
     <ClCompile Include="imaging\color-mapper.cpp" />
     <ClCompile Include="lights\omnidirectional-point-light.cpp" />
@@ -399,6 +403,7 @@
     <ClCompile Include="primitives\sphere-primitive.cpp" />
     <ClCompile Include="math\rectangle2d.cpp" />
     <ClCompile Include="primitives\transformer-primitive.cpp" />
+    <ClCompile Include="primitives\triangle-primitive.cpp" />
     <ClCompile Include="primitives\union-primitive.cpp" />
     <ClCompile Include="raytracers\ray-tracer-v0.cpp" />
     <ClCompile Include="raytracers\ray-tracer-v1.cpp" />
@@ -425,8 +430,13 @@
     <ClCompile Include="scripting\scripting.cpp" />
     <ClCompile Include="math\transformation2d.cpp" />
     <ClCompile Include="tasks\lambda-task.cpp" />
+    <ClCompile Include="tasks\parallel-task-scheduler.cpp" />
     <ClCompile Include="tasks\serial-task-scheduler.cpp" />
     <ClCompile Include="tests\main.cpp" />
+    <ClCompile Include="tests\primitives\plane\xy-plane-consistency-tests.cpp" />
+    <ClCompile Include="tests\primitives\plane\xz-plane-consistency-tests.cpp" />
+    <ClCompile Include="tests\primitives\plane\yz-plane-consistency-tests.cpp" />
+    <ClCompile Include="tests\primitives\triangle\triangle-tests.cpp" />
     <ClCompile Include="util\base64.cpp" />
     <ClCompile Include="util\beep.cpp" />
     <ClCompile Include="util\misc.cpp" />
@@ -502,6 +512,7 @@
     <ClInclude Include="math\transformation-matrices.h" />
     <ClInclude Include="math\vector.h" />
     <ClInclude Include="math\point.h" />
+    <ClInclude Include="mesh\mesh-reader.h" />
     <ClInclude Include="performance\performance.h" />
     <ClInclude Include="pipeline\animation-processor.h" />
     <ClInclude Include="pipeline\base64-processor.h" />
@@ -516,6 +527,10 @@
     <ClInclude Include="pipeline\text-writer-consumer.h" />
     <ClInclude Include="pipeline\wif-consumer.h" />
     <ClInclude Include="pipeline\wif-processor.h" />
+    <ClInclude Include="primitives\bounding-box-primitive.h" />
+    <ClInclude Include="primitives\disk-primitive.h" />
+    <ClInclude Include="primitives\mesh-primitive.h" />
+    <ClInclude Include="primitives\triangle-primitive.h" />
     <ClInclude Include="raytracers\ray-tracer-v1.h" />
     <ClInclude Include="raytracers\ray-tracer-v2.h" />
     <ClInclude Include="raytracers\ray-tracer-v3.h" />
@@ -591,6 +606,7 @@
     <ClInclude Include="scripting\scripting.h" />
     <ClInclude Include="math\transformation2d.h" />
     <ClInclude Include="tasks\lambda-task.h" />
+    <ClInclude Include="tasks\parallel-task-scheduler.h" />
     <ClInclude Include="tasks\serial-task-scheduler.h" />
     <ClInclude Include="tasks\task-helpers.h" />
     <ClInclude Include="tasks\task-scheduler.h" />

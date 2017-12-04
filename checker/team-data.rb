@@ -24,6 +24,20 @@ team_member 'Lemmens Maxim' do
   
   extension PlaneXZ
   extension PlaneYZ
+  
+  extension Triangle
+  extension TriangleOptimized
+  extension BoundingBox
+  
+  extension PrimitiveRotationX
+  extension PrimitiveRotationY
+  extension PrimitiveRotationZ
+  
+  extension ParallelScheduler
+  
+  extension MeshReading
+  extension MeshOptimizing
+  extension MeshRendering
 end
 
 
