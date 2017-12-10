@@ -87,12 +87,9 @@ raytracer::Primitive raytracer::mesh::MeshReader::read_mesh(std::string path)
 			faces_list.push_back(primitives::triangle(x, y, z));
 		}
 
-
-
 		myfile.close();
 	}
 	else LOG(INFO) << "Unable to open file";
-
 
 	Primitive mesh = primitives::mesh(faces_list);
 	LOG(INFO) << "Done!";

@@ -32,7 +32,7 @@ namespace
 	};
 }
 
-Primitive raytracer::primitives::bounding_box_accelerator(const Primitive prim)
+Primitive raytracer::primitives::bounding_box_accelerator(Primitive prim)
 {
 	return Primitive(std::make_shared<BoundingBoxAcceleratorImplementation>(prim));
 }

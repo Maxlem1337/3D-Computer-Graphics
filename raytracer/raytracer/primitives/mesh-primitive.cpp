@@ -1,5 +1,5 @@
 #include "primitives/mesh-primitive.h"
-
+#include "primitives/bounding-box-primitive.h"
 
 using namespace raytracer;
 using namespace raytracer::primitives;
@@ -33,6 +33,15 @@ namespace
 
 		math::Box bounding_box() const override
 		{
+			//Primitive p = Primitive(make_shared<MeshImplementation>(triangles));
+			//return bounding_box_accelerator(p)->bounding_box();
+
+			//Top box
+			//Box top_box = Box();
+
+
+
+
 			return Box(math::Interval<double>(-1, 1), math::Interval<double>(-1, 1), math::Interval<double>(-1, 1));
 		}
 	};

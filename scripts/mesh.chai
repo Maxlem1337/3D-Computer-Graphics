@@ -1,4 +1,5 @@
-global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
+//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
+global mesh_path = "C:\\Users\\maxim\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
 global mesh_primitive = create_mesh(mesh_path)
 
 def scene_at(now)
@@ -23,7 +24,7 @@ def scene_at(now)
   
 
   primitives.push_back( translate(vec(0,-4,0), decorate(floor_material, xz_plane())) )
-  primitives.push_back( decorate(mesh_material, rotate_around_y(degrees(a[now]), mesh_primitive)) )
+  primitives.push_back( decorate(mesh_material, rotate_around_y(degrees(a[now]), accelerate(mesh_primitive))) )
 
 
   var lights = [ Lights.omnidirectional( pos(0,3.8,0), Colors.white() ) ]

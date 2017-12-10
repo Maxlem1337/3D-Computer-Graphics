@@ -24,7 +24,15 @@ namespace
 		math::Box bounding_box() const override
 		{
 			//TODO!
-			return Box(Interval<double>::infinite(), Interval<double>::infinite(), interval(-0.01, 0.01));
+			//Vector3D e = radius*sqrt((1.0 - m_normal*m_normal));
+			//auto a = center - e;
+			//auto b = center + e;
+
+
+			//return Box::infinite();
+			//return Box(interval(a.x(), b.x()), interval(a.y(), b.y()), interval(a.z(), b.z()));
+			return Box(interval(-radius, radius), interval(-radius, radius), interval(-radius, radius));
+
 		}
 
 		std::vector<std::shared_ptr<Hit>> find_all_hits(const Ray& ray) const override {
