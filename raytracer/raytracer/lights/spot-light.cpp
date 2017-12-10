@@ -1,0 +1,42 @@
+#include "spot-light.h"
+
+using namespace imaging;
+using namespace math;
+using namespace raytracer;
+
+
+	SpotLight::SpotLight(const Point3D& origin, const Point3D& destination, const Angle& a, const Color& color) : PointLightImplementation(origin), color(color), destination(destination), angle(a)
+	{
+	}
+
+	raytracer::LightRay SpotLight::cast_lightray_to(const math::Point3D & P) const
+	{
+		auto L = m_position;
+
+		Ray ray(L, destination);
+		
+		//A central shining direction specified by a vector v
+		auto v = ray.direction;
+
+		//P - L / |P - L|
+		Vector3D u = (P - L).normalized();
+
+		//u.dot(v) = cosine of the angle between the two vectors u and v.
+		//The spotlight only sends lights to location P if the angle between LP and v is less then angle/2
+		if (u.dot(v) >= cos(angle / 2))
+		{
+			return LightRay(ray, color);
+		}
+		else
+		{
+			return LightRay(ray, colors::black());
+		}
+	}
+
+
+
+raytracer::LightSource lights::spot(const Point3D& origin, const Point3D& destination, const Angle& a, const Color& color)
+{
+	return LightSource(std::make_shared<SpotLight>(origin, destination, a, color));
+}
+

@@ -24,10 +24,9 @@ namespace
 		math::Box bounding_box() const override
 		{
 			//TODO!
-			//Vector3D e = radius*sqrt((1.0 - m_normal*m_normal));
+			//Vector3D e = radius*sqrt((1.0 - m_normal.dot(m_normal)));
 			//auto a = center - e;
 			//auto b = center + e;
-
 
 			//return Box::infinite();
 			//return Box(interval(a.x(), b.x()), interval(a.y(), b.y()), interval(a.z(), b.z()));

@@ -1,5 +1,7 @@
 #include "primitives/mesh-primitive.h"
 #include "primitives/bounding-box-primitive.h"
+#include "easylogging++.h"
+
 
 using namespace raytracer;
 using namespace raytracer::primitives;
@@ -33,16 +35,23 @@ namespace
 
 		math::Box bounding_box() const override
 		{
-			//Primitive p = Primitive(make_shared<MeshImplementation>(triangles));
-			//return bounding_box_accelerator(p)->bounding_box();
+			LOG(INFO) << "[MESH] Starting bb mesh";
 
-			//Top box
-			//Box top_box = Box();
-
-
+			
+			//get bounding box of first triangle.
+			Box smallbox = triangles.at(0)->bounding_box();
 
 
-			return Box(math::Interval<double>(-1, 1), math::Interval<double>(-1, 1), math::Interval<double>(-1, 1));
+			//group all boxes until you end up with on single box
+			for each (Primitive p in triangles)
+			{
+				smallbox = smallbox.merge(p->bounding_box());
+			}
+
+			LOG(INFO) << "[MESH] Returning bb mesh";
+			return smallbox;
+
+			//return Box(math::Interval<double>(-1, 1), math::Interval<double>(-1, 1), math::Interval<double>(-1, 1));
 		}
 	};
 }

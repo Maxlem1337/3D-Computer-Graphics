@@ -21,7 +21,7 @@ def scene_at(now)
   var a = Animations.animate(0, 360, seconds(1) )
   
 
-  var root = union( [ decorate(disk_material, rotate_around_y(degrees(a[now]), rotate_around_x(degrees(90), disk()))),
+  var root = union( [ decorate(disk_material, rotate_around_y(degrees(a[now]), rotate_around_x(degrees(90), accelerate(disk())))),
                       decorate(Materials.vertical_lines(0.1, black, white), translate(vec(0,-1,0), xz_plane())) ] )
 
   var lights = [ Lights.omnidirectional( pos(5,5,5), Colors.white() ) ]
