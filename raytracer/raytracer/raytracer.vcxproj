@@ -348,6 +348,8 @@
   <ItemGroup>
     <ClCompile Include="demos\basic-sample.cpp" />
     <ClCompile Include="demos\demo.cpp" />
+    <ClCompile Include="lights\spot-light.cpp" />
+    <ClCompile Include="lights\spot-light.h" />
     <ClCompile Include="math\angle.cpp" />
     <ClCompile Include="animation\animation.cpp" />
     <ClCompile Include="animation\duration.cpp" />
