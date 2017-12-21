@@ -42,6 +42,7 @@ team_member 'Lemmens Maxim' do
   extension Disc
   
   extension Intersection
+  extension Difference
 end
 
 

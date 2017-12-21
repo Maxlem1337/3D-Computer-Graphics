@@ -54,6 +54,7 @@ ModulePtr raytracer::scripting::_private_::create_primitives_module()
 	BIND_DIRECTLY(yz_plane);
 	BIND_DIRECTLY(disk);
 	BIND_DIRECTLY(intersection);
+	BIND_DIRECTLY(difference);
 	BIND_DIRECTLY(triangle);
 	BIND_HELPER_FUNCTION_AS(make_union, union);
 	BIND_HELPER_FUNCTION_AS(primitives::bounding_box_accelerator, accelerate);
