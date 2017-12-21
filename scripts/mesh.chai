@@ -15,36 +15,37 @@ this takes a long time, and crashes my video drivers.
 
 //global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\buddha\\happy_vrip_res4.ply"
 //global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\dragon_recon\\dragon_vrip_res4.ply"
-//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
-global mesh_path = "C:\\Users\\maxim\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
+//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res2.ply"
+global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
+//global mesh_path = "C:\\Users\\maxim\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
 global mesh_primitive = create_mesh(mesh_path)
 
 def scene_at(now)
 {
-  var camera = Cameras.perspective( [ "eye": pos(0, 0, 0.5),
+  var camera = Cameras.perspective( [ "eye": pos(0, 0.5, 1.5),
                                       "look_at": pos(0,0,0) ] )
 
   var a = Animations.animate(0, 360, seconds(1) )
-
-  var white = Materials.uniform( [ "ambient": Colors.white() * 0.1,
-                                   "diffuse": Colors.white() * 0.8 ] )
-  var black = Materials.uniform( [ "ambient": Colors.white() * 0.1,
-                                   "diffuse": Colors.black() * 0.8 ] )
                                    
-  var back_wall_material = Materials.uniform( [ "ambient": Colors.white(),
-                                            "diffuse": Colors.blue() * 0.8 ] )
+  var back_wall_material = Materials.uniform( [ "ambient": Colors.blue() * 0.1,
+                                                "diffuse": Colors.blue() * 0.8 ] )
+                                                
+  var left_wall_material = Materials.uniform( [ "ambient": Colors.red() * 0.1,
+                                                "diffuse": Colors.red() * 0.8 ] )
 
-  var mesh_material = Materials.uniform( [ "ambient": Colors.white() * 0.1, "diffuse": Colors.white() * 0.8] )
-                   
-
-  var floor_material = Materials.uniform( [ "ambient": Colors.green() * 0.1,
-                                            "diffuse": Colors.green() * 0.8,
+  var right_wall_material = Materials.uniform( [ "ambient": Colors.green() * 0.1,
+                                                 "diffuse": Colors.green() * 0.8 ] )
+                                                 
+  var floor_material = Materials.uniform( [ "ambient": Colors.white() * 0.1,
+                                            "diffuse": Colors.white() * 0.8,
                                             "reflectivity": 0.5 ] )
                                             
-    //var mesh_material = Materials.uniform( [ "ambient": Colors.white() * 0.5] )
+  var mesh_material = Materials.uniform( [ "ambient": Colors.white() * 0.1, "diffuse": Colors.white() * 0.8] )
                                          
 var primitives = []
 primitives.push_back( translate(vec(0,-1,0), decorate(floor_material, xz_plane())) )
+primitives.push_back( translate(vec(-1,0,0), decorate(left_wall_material, yz_plane())) )
+//primitives.push_back( translate(vec(1,0,0), decorate(right_wall_material, yz_plane())) )
 primitives.push_back( translate(vec(0,0,-1), decorate(back_wall_material, xy_plane())) )
 primitives.push_back( decorate(mesh_material, rotate_around_y(degrees(a[now]), accelerate(mesh_primitive))) )
 
@@ -57,8 +58,8 @@ primitives.push_back( decorate(mesh_material, rotate_around_y(degrees(a[now]), a
 
 var raytracer = Raytracers.v5()
 
-var renderer = Renderers.standard( [ "width": 250,
-                                     "height": 250,
+var renderer = Renderers.standard( [ "width": 500,
+                                     "height": 500,
                                      "sampler": Samplers.single(),
                                      "ray_tracer": raytracer ] )
 
