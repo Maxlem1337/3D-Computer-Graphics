@@ -15,8 +15,8 @@ this takes a long time, and crashes my video drivers.
 
 //global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\buddha\\happy_vrip_res4.ply"
 //global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\dragon_recon\\dragon_vrip_res4.ply"
-global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
-//global mesh_path = "C:\\Users\\maxim\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
+//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
+global mesh_path = "C:\\Users\\maxim\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
 global mesh_primitive = create_mesh(mesh_path)
 
 def scene_at(now)
@@ -34,7 +34,7 @@ def scene_at(now)
   var back_wall_material = Materials.uniform( [ "ambient": Colors.white(),
                                             "diffuse": Colors.blue() * 0.8 ] )
 
-  var mesh_material = Materials.uniform( [ "ambient": Colors.black() * 0.1] )
+  var mesh_material = Materials.uniform( [ "ambient": Colors.white() * 0.1, "diffuse": Colors.white() * 0.8] )
                    
 
   var floor_material = Materials.uniform( [ "ambient": Colors.green() * 0.1,
@@ -44,13 +44,13 @@ def scene_at(now)
     //var mesh_material = Materials.uniform( [ "ambient": Colors.white() * 0.5] )
                                          
 var primitives = []
-primitives.push_back( translate(vec(0,0,0), decorate(floor_material, xz_plane())) )
+primitives.push_back( translate(vec(0,-1,0), decorate(floor_material, xz_plane())) )
 primitives.push_back( translate(vec(0,0,-1), decorate(back_wall_material, xy_plane())) )
 primitives.push_back( decorate(mesh_material, rotate_around_y(degrees(a[now]), accelerate(mesh_primitive))) )
 
 
 
-  var lights = [ Lights.omnidirectional( pos(0,1.9,0), Colors.white() ) ]
+  var lights = [ Lights.omnidirectional( pos(2,2,2), Colors.white() ) ]
 
   create_scene(camera, union(primitives), lights)
 }

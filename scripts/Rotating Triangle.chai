@@ -43,7 +43,7 @@ var camera = Cameras.perspective( [ "eye": pos(2,2,2),
 
 
 
-  var lights = [ Lights.omnidirectional( pos(0, 5, 0), Colors.white() ), Lights.omnidirectional( pos(0, -5, 0), Colors.white() ) ]
+  var lights = [ Lights.omnidirectional( pos(5, 5, 5), Colors.white() ), Lights.omnidirectional( pos(0, -5, 0), Colors.white() ) ]
 
   create_scene(camera, root, lights)
 }

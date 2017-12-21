@@ -77,7 +77,6 @@ raytracer::Primitive raytracer::mesh::MeshReader::read_mesh(std::string path)
 			getline(myfile, line);
 			auto doubles = split(line, ' ');
 
-			//sometimes 4 vertexes???
 			int vertex1 = atoi(doubles.at(0).c_str());
 			int vertex2 = atoi(doubles.at(1).c_str());
 			int vertex3 = atoi(doubles.at(2).c_str());

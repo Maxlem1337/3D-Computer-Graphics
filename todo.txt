@@ -1,6 +1,0 @@
-Mesh nog meer optimizen?
-optimized mesh saven op disk, en terug readen.
-
-fix spot light.
-
-disk is not in ruby scripts?
