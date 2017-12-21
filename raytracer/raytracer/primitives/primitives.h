@@ -9,3 +9,4 @@
 #include "primitives/disk-primitive.h"
 #include "primitives/bounding-box-primitive.h"
 #include "primitives/mesh-primitive.h"
+#include "primitives/intersection-primitive.h"

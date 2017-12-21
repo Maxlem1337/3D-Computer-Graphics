@@ -40,6 +40,8 @@ team_member 'Lemmens Maxim' do
   extension MeshReading
   
   extension Disc
+  
+  extension Intersection
 end
 
 
