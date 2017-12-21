@@ -38,6 +38,8 @@ team_member 'Lemmens Maxim' do
   extension MeshReading
   extension MeshOptimizing
   extension MeshRendering
+  
+  extension Disc
 end
 
 

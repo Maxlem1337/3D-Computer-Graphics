@@ -185,6 +185,7 @@ extension :ConeAlongZ, 3
 extension :ConeAlongXOptimized, 2
 extension :ConeAlongYOptimized, 2
 extension :ConeAlongZOptimized, 2
+extension :Disc, 3
 extension :SquareXY, 1
 extension :SquareXZ, 1
 extension :SquareYZ, 1
