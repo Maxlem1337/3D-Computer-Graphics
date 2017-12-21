@@ -20,6 +20,8 @@ team_member 'Lemmens Maxim' do
   extension RayTracerV4
   extension RayTracerV5
   
+  extension SpotLight
+  
   extension MaterialVerticalLines
   
   extension PlaneXZ
@@ -36,8 +38,6 @@ team_member 'Lemmens Maxim' do
   extension ParallelScheduler
   
   extension MeshReading
-  extension MeshOptimizing
-  extension MeshRendering
   
   extension Disc
 end
