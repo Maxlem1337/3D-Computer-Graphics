@@ -13,10 +13,10 @@ def scene_at(now)
 
   var root = decorate(material, union([ translate(vec(0,-1,0),xz_plane()), sphere() ]))
 ///  var root = decorate(material, xz_plane())
-  var p = Animations.animate(0,10,seconds(1))
+  var p = Animations.animate(-10,10,seconds(1))
 
-/*var lights = [ Lights.spot( pos(-5,5,1), pos(p[now],p[now],p[now]), degrees(10), Colors.red() ),
-               Lights.spot( pos(5,5,1), pos(p[now],p[now],p[now]), degrees(10), Colors.green() ) ]*/
+/*var lights = [ Lights.spot( pos(-10,5,1), pos(p[now],p[now],p[now]), degrees(10), Colors.red() ),
+               Lights.spot( pos(10,5,1), pos(p[now],p[now],p[now]), degrees(10), Colors.green() ) ]*/
 
   var lights = [ Lights.spot( pos(10,5,0), pos(p[now],p[now],p[now]), degrees(40), Colors.red() ) ]
 	// var lights = [ Lights.omnidirectional( pos(20, 5, 0), Colors.red() ) ]
@@ -26,8 +26,8 @@ def scene_at(now)
 
 
 var raytracer   = Raytracers.v5()
-var renderer    = Renderers.standard( [ "width": 100,
-                                        "height": 100,
+var renderer    = Renderers.standard( [ "width": 500,
+                                        "height": 500,
                                         "sampler": Samplers.single(),
                                         "ray_tracer": raytracer ] )
 

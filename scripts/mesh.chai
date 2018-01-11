@@ -13,16 +13,18 @@ this takes a long time, and crashes my video drivers.
 
 */
 
-//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\buddha\\happy_vrip_res4.ply"
-//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\dragon_recon\\dragon_vrip_res4.ply"
-//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res2.ply"
-global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
+//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\buddha\\happy_vrip.ply"
+global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\dragon_recon\\dragon_vrip.ply"
+//global mesh_path = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper.ply"
+global mesh_path2 = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res2.ply"
+global mesh_path3 = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res3.ply"
+global mesh_path4 = "E:\\Programs\\Dropbox\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
 //global mesh_path = "C:\\Users\\maxim\\Dropbox\\UCLL\\3d\\bunny\\reconstruction\\bun_zipper_res4.ply"
-global mesh_primitive = create_mesh(mesh_path)
+global mesh_primitive = create_mesh(mesh_path2)
 
 def scene_at(now)
 {
-  var camera = Cameras.perspective( [ "eye": pos(0, 0.5, 1.5),
+  var camera = Cameras.perspective( [ "eye": pos(0, 0.35, 0.35),
                                       "look_at": pos(0,0,0) ] )
 
   var a = Animations.animate(0, 360, seconds(1) )
@@ -40,18 +42,22 @@ def scene_at(now)
                                             "diffuse": Colors.white() * 0.8,
                                             "reflectivity": 0.5 ] )
                                             
-  var mesh_material = Materials.uniform( [ "ambient": Colors.white() * 0.1, "diffuse": Colors.white() * 0.8] )
+  var mesh_material = Materials.uniform( [ "ambient": Colors.white() * 0.1, "diffuse": Colors.white() * 0.8, 
+  												"specular": Colors.white() * 0.8,
+                                             	"specular_exponent": 10,
+                                             	"transparency": 0.7,
+                                            	"refractive_index": 2.5 ] )
                                          
 var primitives = []
 primitives.push_back( translate(vec(0,-1,0), decorate(floor_material, xz_plane())) )
 primitives.push_back( translate(vec(-1,0,0), decorate(left_wall_material, yz_plane())) )
 //primitives.push_back( translate(vec(1,0,0), decorate(right_wall_material, yz_plane())) )
 primitives.push_back( translate(vec(0,0,-1), decorate(back_wall_material, xy_plane())) )
-primitives.push_back( decorate(mesh_material, rotate_around_y(degrees(a[now]), accelerate(mesh_primitive))) )
+primitives.push_back( decorate(mesh_material, rotate_around_y(degrees(a[now]), accelerate(mesh_primitive))))
 
 
 
-  var lights = [ Lights.omnidirectional( pos(2,2,2), Colors.white() ) ]
+  var lights = [ Lights.omnidirectional( pos(1,2,2), Colors.white() ) ]
 
   create_scene(camera, union(primitives), lights)
 }

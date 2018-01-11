@@ -22,7 +22,7 @@ def scene_at(now)
 
   var lights = [ Lights.omnidirectional( pos(5,5,5), Colors.white() ), Lights.omnidirectional( pos(-5,0,-5), Colors.white() ) ]
 
-  create_scene(camera, root, lights)
+  create_scene(camera, accelerate(root), lights)
 }
 
 
