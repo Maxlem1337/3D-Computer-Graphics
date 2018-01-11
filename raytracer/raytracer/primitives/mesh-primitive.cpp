@@ -33,14 +33,11 @@ namespace
 			return hits;
 		}
 
-		math::Box bounding_box() const override
+		Box bounding_box() const override
 		{
 			LOG(INFO) << "[MESH] Starting bb mesh";
-
-			
 			//get bounding box of first triangle.
 			Box smallbox = triangles.at(0)->bounding_box();
-
 
 			//group all boxes until you end up with on single box
 			for each (Primitive p in triangles)
@@ -50,8 +47,6 @@ namespace
 
 			LOG(INFO) << "[MESH] Returning bb mesh";
 			return smallbox;
-
-			//return Box(math::Interval<double>(-1, 1), math::Interval<double>(-1, 1), math::Interval<double>(-1, 1));
 		}
 	};
 }

@@ -382,6 +382,7 @@
     <ClCompile Include="primitives\disk-primitive.cpp" />
     <ClCompile Include="primitives\intersection-primitive.cpp" />
     <ClCompile Include="primitives\mesh-primitive.cpp" />
+    <ClCompile Include="primitives\optimized-mesh-primitive.cpp" />
     <ClCompile Include="primitives\primitive.cpp" />
     <ClCompile Include="imaging\color-mapper.cpp" />
     <ClCompile Include="lights\omnidirectional-point-light.cpp" />
@@ -436,10 +437,6 @@
     <ClCompile Include="tasks\parallel-task-scheduler.cpp" />
     <ClCompile Include="tasks\serial-task-scheduler.cpp" />
     <ClCompile Include="tests\main.cpp" />
-    <ClCompile Include="tests\primitives\plane\xy-plane-consistency-tests.cpp" />
-    <ClCompile Include="tests\primitives\plane\xz-plane-consistency-tests.cpp" />
-    <ClCompile Include="tests\primitives\plane\yz-plane-consistency-tests.cpp" />
-    <ClCompile Include="tests\primitives\triangle\triangle-tests.cpp" />
     <ClCompile Include="util\base64.cpp" />
     <ClCompile Include="util\beep.cpp" />
     <ClCompile Include="util\misc.cpp" />
@@ -536,6 +533,7 @@
     <ClInclude Include="primitives\disk-primitive.h" />
     <ClInclude Include="primitives\intersection-primitive.h" />
     <ClInclude Include="primitives\mesh-primitive.h" />
+    <ClInclude Include="primitives\optimized-mesh-primitive.h" />
     <ClInclude Include="primitives\triangle-primitive.h" />
     <ClInclude Include="raytracers\ray-tracer-v1.h" />
     <ClInclude Include="raytracers\ray-tracer-v2.h" />

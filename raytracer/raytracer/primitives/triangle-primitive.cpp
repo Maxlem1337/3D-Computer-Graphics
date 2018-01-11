@@ -42,7 +42,7 @@ namespace
 				return hits;
 			}
 
-			
+
 			auto hit = std::make_shared<Hit>();
 			initialize_hit(hit.get(), ray, t);
 			hits.push_back(hit);

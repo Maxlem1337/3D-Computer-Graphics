@@ -282,18 +282,6 @@
     <ClCompile Include="primitives\triangle-primitive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tests\primitives\plane\xy-plane-consistency-tests.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tests\primitives\plane\xz-plane-consistency-tests.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tests\primitives\plane\yz-plane-consistency-tests.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tests\primitives\triangle\triangle-tests.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tasks\parallel-task-scheduler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -307,6 +295,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="primitives\difference-primitive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="primitives\optimized-mesh-primitive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -852,6 +843,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="primitives\difference-primitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="primitives\optimized-mesh-primitive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
