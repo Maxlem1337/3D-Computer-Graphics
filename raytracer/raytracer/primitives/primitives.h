@@ -11,3 +11,4 @@
 #include "primitives/mesh-primitive.h"
 #include "primitives/intersection-primitive.h"
 #include "primitives/difference-primitive.h"
+#include "primitives/optimized-mesh-primitive.h"
