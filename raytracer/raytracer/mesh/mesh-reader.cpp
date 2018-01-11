@@ -70,6 +70,7 @@ raytracer::Primitive raytracer::mesh::MeshReader::read_mesh(std::string path)
 			double x = atof(doubles.at(0).c_str());
 			double y = atof(doubles.at(1).c_str());
 			double z = atof(doubles.at(2).c_str());
+			//LOG(INFO) << "Vertex: " << x << " " << y << " " << z;
 			vertex_list.push_back(Point3D(x, y, z));
 		}
 
@@ -81,11 +82,14 @@ raytracer::Primitive raytracer::mesh::MeshReader::read_mesh(std::string path)
 			int vertex2 = atoi(doubles.at(2).c_str());
 			int vertex3 = atoi(doubles.at(3).c_str());
 
-			//LOG(INFO) << vertex1 << " " << vertex2 << " " << vertex3;
+			//LOG(INFO) << "face: " << vertex1 << " " << vertex2 << " " << vertex3;
 
 			auto x = vertex_list.at(vertex1);
 			auto y = vertex_list.at(vertex2);
 			auto z = vertex_list.at(vertex3);
+
+			//LOG(INFO) << "triangle: " << x << " " << y << " " << z;
+
 			faces_list.push_back(primitives::triangle(x, y, z));
 		}
 
@@ -93,7 +97,8 @@ raytracer::Primitive raytracer::mesh::MeshReader::read_mesh(std::string path)
 	}
 	else LOG(INFO) << "Unable to open file";
 
-	Primitive mesh = primitives::mesh(faces_list);
+	Primitive mesh = primitives::optimized_mesh(faces_list);
+
 	LOG(INFO) << "Done!";
 	return mesh;
 }
