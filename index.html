@@ -1,0 +1,127 @@
+<html>
+	<style>
+		p {
+			text-align: center;
+		}
+		
+		div {
+			text-align: center;
+		}
+		
+		a  {
+			color: black;
+		}
+		
+		.navigation {
+			overflow: hidden;
+			position: fixed; /* Set the navbar to fixed position */
+			top: 0; /* Position the navbar at the top of the page */
+			list-style-type: none;
+		}
+		
+		.level1 {
+			background: linear-gradient(#82ff82, #c3f9c3)
+		}
+		
+		.level2 {
+			background: linear-gradient(#84fd80, #f9c280)
+		}
+		
+		.level3 {
+			background: linear-gradient(#f3b67a, #ffe3c7)
+		}
+		
+		.level4 {
+			background: linear-gradient(#d8a06c, #804040)
+		}
+		
+		.level5 {
+			background: linear-gradient(#c26262, #967676)
+		}
+		
+		.level6 {
+			background: linear-gradient(#797979, #090909)
+		}
+		
+		.excluded {
+			text-decoration: line-through;
+		}
+		
+	</style>
+	
+	
+<body>
+<ul class='navigation'>
+	<li class='level1' ><a class='level1' href='#BasicSample'>(1) BasicSample</a></li>
+	<li class='level1' ><a class='level1' href='#BasicScripting'>(1) BasicScripting</a></li>
+	<li class='level1' ><a class='level1' href='#RayTracerV1'>(1) RayTracerV1</a></li>
+	<li class='level1' ><a class='level1' href='#PlaneXZ'>(1) PlaneXZ</a></li>
+	<li class='level1' ><a class='level1 excluded' href='#PlaneYZ'>(1) PlaneYZ</a></li>
+	<li class='level1' ><a class='level1' href='#TriangleOptimized'>(1) TriangleOptimized</a></li>
+	<li class='level1' ><a class='level1' href='#PrimitiveRotationX'>(1) PrimitiveRotationX</a></li>
+	<li class='level1' ><a class='level1 excluded' href='#PrimitiveRotationY'>(1) PrimitiveRotationY</a></li>
+	<li class='level1' ><a class='level1 excluded' href='#PrimitiveRotationZ'>(1) PrimitiveRotationZ</a></li>
+	<li class='level2' ><a class='level2' href='#RayTracerV2'>(2) RayTracerV2</a></li>
+	<li class='level2' ><a class='level2' href='#RayTracerV3'>(2) RayTracerV3</a></li>
+	<li class='level2' ><a class='level2' href='#RayTracerV4'>(2) RayTracerV4</a></li>
+	<li class='level2' ><a class='level2' href='#MaterialVerticalLines'>(2) MaterialVerticalLines</a></li>
+	<li class='level2' ><a class='level2' href='#Triangle'>(2) Triangle</a></li>
+	<li class='level2' ><a class='level2' href='#BoundingBox'>(2) BoundingBox</a></li>
+	<li class='level3' ><a class='level3' href='#RayTracerV5'>(3) RayTracerV5</a></li>
+	<li class='level3' ><a class='level3' href='#SpotLight'>(3) SpotLight</a></li>
+	<li class='level6' ><a class='level6' href='#Disc'>(3) Disc</a></li>
+	<li class='level4' ><a class='level4' href='#ParallelScheduler'>(4) ParallelScheduler</a></li>
+	<li class='level5' ><a class='level5' href='#MeshReading'>(5) MeshReading</a></li>
+	<li class='level5' ><a class='level5' href='#MeshOptimizing'>(5) MeshOptimizing</a></li>
+	<li class='level6' ><a class='level6' href='#Intersection'>(5) Intersection</a></li>
+	<li class='level6' ><a class='level6' href='#Difference'>(5) Difference</a></li>
+</ul>
+
+<div id='BasicSample'><h1>BasicSample</h1></div>
+<hr>
+<div id='BasicScripting'><h1>BasicScripting</h1></div>
+<hr>
+<div id='RayTracerV1'><h1>RayTracerV1</h1><p>RayTracerV1_2.chai<p><img src='looping/RaytracerV1_2.gif'/></div>
+<hr>
+<div id='PlaneXZ'><h1>PlaneXZ</h1><p>Plane XZ + XY + YZ.chai<p><img src='looping/Plane XZ + XY + YZ.gif'/></div>
+<hr>
+<div id='PlaneYZ'><h1>PlaneYZ (excluded)</h1><p>Plane XZ + XY + YZ.chai<p><img src='looping/Plane XZ + XY + YZ.gif'/></div>
+<hr>
+<div id='TriangleOptimized'><h1>TriangleOptimized</h1></div>
+<hr>
+<div id='PrimitiveRotationX'><h1>PrimitiveRotationX</h1><p>Rotating X + Triangle.chai<p><img src='looping/Rotating X + Triangle.gif'/></div>
+<hr>
+<div id='PrimitiveRotationY'><h1>PrimitiveRotationY (excluded)</h1><p>Y-Rotation Primitive (Triangle).chai<p><img src='looping/Y-Rotation Primitive (Triangle).gif'/></div>
+<hr>
+<div id='PrimitiveRotationZ'><h1>PrimitiveRotationZ (excluded)</h1><p>Rotating Z + Triangle.chai<p><img src='looping/Rotating Z + Triangle.gif'/></div>
+<hr>
+<div id='RayTracerV2'><h1>RayTracerV2</h1><p>RaytracerV2_2.chai<p><img src='looping/RaytracerV2_2.gif'/></div>
+<hr>
+<div id='RayTracerV3'><h1>RayTracerV3</h1><p>RaytracerV3.chai<p><img src='looping/RaytracerV3.gif'/></div>
+<hr>
+<div id='RayTracerV4'><h1>RayTracerV4</h1><p>RaytracerV4.chai<p><img src='looping/RaytracerV4.gif'/></div>
+<hr>
+<div id='MaterialVerticalLines'><h1>MaterialVerticalLines</h1><p>Vertical & Horizontal Lines.chai<p><img src='looping/vertical & horizontal lines.gif'/></div>
+<hr>
+<div id='Triangle'><h1>Triangle</h1><p>Triangle.chai<p><img src='looping/Triangle.gif'/></div>
+<hr>
+<div id='BoundingBox'><h1>BoundingBox</h1></div>
+<hr>
+<div id='RayTracerV5'><h1>RayTracerV5</h1><p>RaytracerV5.chai<p><img src='looping/RaytracerV5.gif'/></div>
+<hr>
+<div id='SpotLight'><h1>SpotLight</h1><p>Spot Light.chai<p><img src='looping/Spotlight.gif'/></div>
+<hr>
+<div id='Disc'><h1>Disc</h1><p>Disk.chai<p><img src='looping/Disk.gif'/></div>
+<hr>
+<div id='ParallelScheduler'><h1>ParallelScheduler</h1></div>
+<hr>
+<div id='MeshReading'><h1>MeshReading</h1><p>mesh.chai<p><img src='looping/mesh_bunny.gif'/></div>
+<hr>
+<div id='MeshOptimizing'><h1>MeshOptimizing</h1><p>mesh.chai<p><img src='looping/mesh_dragon.gif'/><p>mesh_porsche.chai<p><img src='looping/mesh_porsche.gif'/></div>
+<hr>
+<div id='Intersection'><h1>Intersection</h1><p>Intersection of 2 spheres.chai<p><img src='looping/Intersection of 2 spheres.gif'/></div>
+<hr>
+<div id='Difference'><h1>Difference</h1><p>Difference of primitives.chai<p><img src='looping/Difference of primitives.gif'/></div>
+<hr>
+</body>
+</html>
