@@ -20,7 +20,7 @@ Tijdens dit OPO ontwikkelen studenten een ray tracer in C++. Volgende features k
 
 ## Completed Extensions:
 
-### Lemmens Maxim
+### Lemmens Maxim https://maxlem1337.github.io/3dcg/
 - 5x Difficulty 1.
   - BasicSample
   - BasicScripting
