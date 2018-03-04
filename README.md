@@ -1,21 +1,21 @@
 # 3dcg
 Tijdens dit OPO ontwikkelen studenten een ray tracer in C++. Volgende features komen aan bod:
 
-Camera's (perspective, orthographic, fisheye, …)
-Lichtbronnen (point lights, spotlights, area lights, distant lights, …)
-Reflectiemodellen (Lambert, Phong, …)
-Materialen (textures, proceduraal gegenereerde textures (Perlin noise, Worley noise, etc.), BRDFs, …)
-3D vormen (sphere, plane, cylinder, cone, disc, triangle, meshes, …)
-CSG (union, intersection, difference)
-Transformaties (translation, scaling, rotation)
-Schaduwen
-Reflectie
-Refractie
-Misteffecten
-Antialiasing
-Postprocessing (cartoon rendering, kd-trees, octrees, …)
-Acceleratietechnieken (bounding boxes, )
-Scripting taal
+- Camera's (perspective, orthographic, fisheye, …)
+- Lichtbronnen (point lights, spotlights, area lights, distant lights, …)
+- Reflectiemodellen (Lambert, Phong, …)
+- Materialen (textures, proceduraal gegenereerde textures (Perlin noise, Worley noise, etc.), BRDFs, …)
+- 3D vormen (sphere, plane, cylinder, cone, disc, triangle, meshes, …)
+- CSG (union, intersection, difference)
+- Transformaties (translation, scaling, rotation)
+- Schaduwen
+- Reflectie
+- Refractie
+- Misteffecten
+- Antialiasing
+- Postprocessing (cartoon rendering, kd-trees, octrees, …)
+- Acceleratietechnieken (bounding boxes, )
+- Scripting taal
 
 
 ## Completed Extensions:
